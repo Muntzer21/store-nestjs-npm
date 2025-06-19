@@ -6,7 +6,7 @@ import { Review } from '../../review/entities/review.entity';
 import { Roles } from '../../utils/common/user-roles.enum';
 import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, Timestamp, UpdateDateColumn } from 'typeorm';
 
-@Entity('users')
+@Entity()
 export class User {
   @PrimaryGeneratedColumn()
   user_id: number;
