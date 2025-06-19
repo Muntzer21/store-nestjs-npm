@@ -7,9 +7,9 @@ import helmet from 'helmet';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
-    origin: 'http://127.0.0.1:5502', // Allow your local development server
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS', // Allowed methods
-    credentials: true, // If you're sending cookies/authentication headers
+    origin: '*', // DANGEROUS FOR PRODUCTION! For debugging ONLY.
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    // credentials: true, // You might need to disable this if origin is '*'
   });
   app.use(helmet());
   // app.setGlobalPrefix('api/v1')
