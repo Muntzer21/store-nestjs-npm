@@ -2,6 +2,12 @@
 import { DataSource, DataSourceOptions } from 'typeorm';
 import { config } from 'dotenv';
 import { User } from '../src/users/entities/user.entity';
+import { Review } from 'src/review/entities/review.entity';
+import { Order } from 'src/order/entities/order.entity';
+import { Category } from 'src/category/entities/category.entity';
+import { Product } from 'src/product/entities/product.entity';
+import { OrdersProducts } from 'src/order/entities/orders.producta.entity';
+import { Shipping } from 'src/order/entities/shipping.entity';
 
 config({
   path: '.env',
@@ -9,7 +15,7 @@ config({
 export const dataSourceOptions: DataSourceOptions = {
   type: 'postgres',
   url: process.env.DATABASE_URL,
-  entities: [User, 'dist/**/*.entity{.ts,.js}'],
+  entities: [User,Review,Order,Category,Product,OrdersProducts,Shipping],
   migrations: ['dist/db/migrations/*{.js,.ts}'],
 };
 const dataSource = new DataSource(dataSourceOptions);
