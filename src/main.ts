@@ -11,7 +11,7 @@ async function bootstrap() {
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     // credentials: true, // You might need to disable this if origin is '*'
   });
-  app.use(helmet());
+  // app.use(helmet());
   // app.setGlobalPrefix('api/v1')
   app.useGlobalPipes(
     new ValidationPipe({
